@@ -1,1 +1,100 @@
-Hello World
+<script>
+    var keyword = "Hello worlds";
+    alert(keyword);
+    console.log(keyword);
+    document.write(keyword);
+
+    var string = 'He said "My name is elliot"';
+    var upperstring = string.toUpperCase();
+
+    document.write(upperstring);
+
+    document.write("<br>",string + square(2));
+
+    document.write("<br>",sum3(1,2,3));
+
+    var person = {firstName:"John", age:50, occupation:"Homeless"};
+
+    var myList = ["hello","my","good"];
+
+    function getName (){
+        person.firstName =  document.getElementById("Name").value;
+        document.write(person.firstName)
+    }
+
+
+    for(i = 0;i<myList.length ;i++ ){
+        document.write(" "+myList[i]);
+    }
+
+        myList.push("friend");
+    for(i = 0;i<myList.length ;i++ ){
+        document.write(" "+myList[i]);
+    }
+
+    document.write("<br>",person.age,person.firstName,person.occupation);
+
+    person.age = 10;
+    person.firstName = "Bill";
+    person.occupation = "Web dev"
+
+    document.write("<br>",person.age,person.firstName,person.occupation);
+
+    document.write("<br>",isAged20to40(person));
+
+
+
+    fizzbuzz("poop","hat",23);
+
+    for(i = 1; i<11;i++)
+    {
+        if(i%2 == 0){
+            document.write("<br>",i);
+        }
+    }
+
+    function fizzbuzz (fizz, buzz, number){
+        for(i = 1; i<number+1;i++)
+        {
+            if((i%3 != 0)&&(i%5 != 0)){
+                document.write(i)
+            }
+            if(i%3 == 0){
+                document.write(fizz);
+            }
+            if(i%5 == 0){
+                document.write(buzz);
+            }
+            document.write("<br>");
+        }
+    }
+
+
+    function square (number){
+        return number*number;
+    }
+
+    function sum3 (number1, number2, number3){
+        return number1+number2+number3;
+    }
+    function addAge(person) {
+        person.age += 1;
+        document.write(person.age);
+    }
+    function isAged20to40 (person){
+        if((person.age < 20) &&(person.age > 40)){
+            return false;
+        }else{
+            return true;
+        }
+    }
+</script>
+
+<!DOCTYPE html>
+<html>
+    <body>
+    <input type = "text" id = "Name">
+    <input type = "button" onclick="addAge(person)"value = "Try it">
+    <input type = "button" onclick="getName()"value = "Get Name">
+    </body>
+</html>
