@@ -1,0 +1,49 @@
+<html>
+    <body>
+        Car name:<input type = "text" id = "carName">
+
+        Broken car part one: <input type="checkbox" id="bCP1Check">
+
+        Broken car part two: <input type="checkbox" id="bCP2Check">
+
+        <input type = "button" onclick="createNewCar()"value = "Create car">
+        <input type = "button" onclick="displayCarList()"value = "Display cars">
+    </body>
+    <script>
+        class car {
+            constructor(name,faults){
+                this.name = name;
+                this.faults = faults;
+            }
+            getName(){
+                return this.name;
+            }
+            calculatePrice(){
+                let cost = 0;
+                for(let x = 0; x < this.faults.length; x++){
+                    if(!this.faults[x].solved){
+                        cost += this.faults[x].price;
+                    }
+                }
+                return cost;
+            }
+        }
+
+        var myH1 = document.createElement("h1");
+
+        carList = [];
+
+
+
+        function createNewCar(){
+            name = document.getElementById("carName").value;
+            carList.push(new car(name,[{"solved":!(document.getElementById("bCP1Check").checked),"price":50},{"solved":!(document.getElementById("bCP2Check").checked),"price":50}]))
+        }
+        function displayCarList(){
+            for(i = 0; i < carList.length;i++){
+                myH1.innerHTML += carList[i].getName() + " " +carList[i].calculatePrice();;
+            }
+            document.getElementsByTagName("body")[0].appendChild(myH1);
+        }
+    </script>
+</html>

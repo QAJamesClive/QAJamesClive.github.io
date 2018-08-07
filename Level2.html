@@ -1,0 +1,76 @@
+<input type = "text" id = "Parapgraph">
+<input type = "button" onclick="Dom1Create()"value = "Create Text">
+<input type = "button" onclick="Dom1Edit()"value = "Set Text">
+<input type = "button" onclick="Dom1Delete()"value = "Delete Text">
+
+<script>
+fizzbuzz("poop","hat",23);
+function fizzbuzz (fizz, buzz, number){
+        for(i = 1; i<number+1;i++)
+        {
+            if((i%3 != 0)&&(i%5 != 0)){
+                document.write(i)
+            }
+            if(i%3 == 0){
+                document.write(fizz);
+            }
+            if(i%5 == 0){
+                document.write(buzz);
+            }
+            document.write("<br>");
+        }
+    }
+
+iteration4(29);
+
+function iteration4 (number){
+    while(number !=1)
+    {
+        if(number%3 == 0){
+            number = number/3;
+            document.write(" ",number);
+        }
+        else if(number%3 !=0){
+            if((number-1)%3 ==0){
+                number--;
+                document.write(" ",number);
+            }else{
+                number++;
+                document.write(" ",number);
+            }
+        }
+    }
+} 
+
+Strings4("xxx55777");
+
+function Strings4(string){
+
+    for(i = 0;i<string.length;i++){
+        if(i+2>string.length){
+            break;
+        }else{
+            if((string.charAt(i) == string.charAt(i+1)) && (string.charAt(i+2) == string.charAt(i+1))){
+                document.write("Tripple");
+            }
+        }
+    }
+}
+
+function Dom1Create(){
+    para = document.createElement("P");
+    para.setAttribute("id","paragraph")  
+}
+
+function Dom1Edit(){
+    paragraph =  document.getElementById("Parapgraph").value;
+    t = document.createTextNode(paragraph);
+    para.appendChild(t);                                       
+    document.body.appendChild(para); 
+}
+
+function Dom1Delete(){
+    elem = document.getElementById("paragraph");
+    elem.parentNode.removeChild(elem);
+}
+</script>

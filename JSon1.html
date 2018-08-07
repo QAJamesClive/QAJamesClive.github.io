@@ -1,0 +1,33 @@
+<html>
+    <body>
+    </body>
+    <script>
+    var requestURL = "https://raw.githubusercontent.com/ewomackQA/JSONDataRepo/master/example.json ";
+    var request = new XMLHttpRequest();
+    request.open("GET", requestURL);
+    request.responseType = "json";
+    request.send();
+    request.onload = function() {
+        var requestData = request.response;
+        var myH1 = document.createElement("h1");
+        for(x in requestData){
+            if(Array.isArray(requestData[x])){
+                reqDataX = requestData[x]
+                myH1.innerHTML += "<br><br>"
+                for(i = 0; i < reqDataX.length;i++){
+                    for(y in reqDataX[i]){
+
+                        myH1.innerHTML += y +" : "+ reqDataX[i][y]+" <br>";
+                    }
+                    myH1.innerHTML += "<br>"
+                }
+            }
+            else{
+                myH1.innerHTML += x + " : ";
+                myH1.innerHTML += requestData[x] + " <br>";
+            }
+            document.getElementsByTagName("body")[0].appendChild(myH1);
+        }
+    }
+    </script>
+</html>

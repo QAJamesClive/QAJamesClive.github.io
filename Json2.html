@@ -1,0 +1,33 @@
+<html>
+    <body>
+        <input type = "text" id = "Input">
+        <input type = "button" onclick="search()"value = "Create Text">
+    </body>
+    <script>
+
+        
+    function search (){
+        input = document.getElementById("Input").value;
+        var requestURL = "https://raw.githubusercontent.com/ewomackQA/JSONDataRepo/master/kings.json";
+        var request = new XMLHttpRequest();
+        request.open("GET", requestURL);
+        request.responseType = "json";
+        request.send();
+        request.onload = function() {
+            var requestData = request.response;
+            var myH1 = document.createElement("h1");
+            for(x in requestData){
+                    reqDataX = requestData[x]
+                    for(y in reqDataX){
+                        if(input == reqDataX[y]){
+                            for(z in reqDataX){
+                                myH1.innerHTML += z+" : "+ reqDataX[z]+" <br>";
+                            }
+                        }
+                    }
+                document.getElementsByTagName("body")[0].appendChild(myH1);
+            }
+        }
+    }
+    </script>
+</html>

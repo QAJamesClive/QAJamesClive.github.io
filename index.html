@@ -17,10 +17,6 @@
 
     var myList = ["hello","my","good"];
 
-    function getName (){
-        person.firstName =  document.getElementById("Name").value;
-        document.write(person.firstName)
-    }
 
 
     for(i = 0;i<myList.length ;i++ ){
@@ -42,33 +38,12 @@
 
     document.write("<br>",isAged20to40(person));
 
-
-
-    fizzbuzz("poop","hat",23);
-
     for(i = 1; i<11;i++)
     {
         if(i%2 == 0){
             document.write("<br>",i);
         }
     }
-
-    function fizzbuzz (fizz, buzz, number){
-        for(i = 1; i<number+1;i++)
-        {
-            if((i%3 != 0)&&(i%5 != 0)){
-                document.write(i)
-            }
-            if(i%3 == 0){
-                document.write(fizz);
-            }
-            if(i%5 == 0){
-                document.write(buzz);
-            }
-            document.write("<br>");
-        }
-    }
-
 
     function square (number){
         return number*number;
@@ -79,7 +54,7 @@
     }
     function addAge(person) {
         person.age += 1;
-        document.write(person.age);
+        console.log(person.age);
     }
     function isAged20to40 (person){
         if((person.age < 20) &&(person.age > 40)){
@@ -88,12 +63,23 @@
             return true;
         }
     }
+
+    function getName (){
+        person.firstName =  document.getElementById("Name").value;
+        console.log(person.firstName);
+        person.age =  document.getElementById("Age").value;
+        console.log(person.age);
+        person.occupation =  document.getElementById("Occupation").value;
+        console.log(person.occupation);
+    }
 </script>
 
 <!DOCTYPE html>
 <html>
     <body>
     <input type = "text" id = "Name">
+    <input type = "text" id = "Age">
+    <input type = "text" id = "Occupation">
     <input type = "button" onclick="addAge(person)"value = "Try it">
     <input type = "button" onclick="getName()"value = "Get Name">
     </body>
