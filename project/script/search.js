@@ -17,10 +17,16 @@ window.onclick = function(event) {
   }
 }
 function setFilter(item){
-    filter = document.getElementById("dropbtn").value;
-    console.log(filter);
+    filter = document.getElementById("dropbtn").textContent;
     document.getElementById("dropbtn").innerHTML = item + ' <i class="fa fa-angle-down"></i>';
     listOfItems = document.getElementById("myDropdown");
-    console.log(listOfItems);
-
+    console.log(filter);
+}
+function search(page){
+  input = document.getElementById("searchTerm").value;
+  filter = document.getElementById("dropbtn").textContent;
+  console.log(input);
+  console.log(filter);
+  var queryString = "?para1=" + input + "&para2=" + filter;
+  window.location.href = page+".html" + queryString;  
 }

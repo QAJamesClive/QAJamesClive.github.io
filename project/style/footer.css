@@ -3,14 +3,13 @@
   padding-bottom: 2.5%;
   padding-top: 2.5%;
   background-color: #0d0d0d;
-  border-top-right-radius: 25px;
-  border-top-left-radius: 25px;
 }
 #disclaimer{
   text-align: center;
   padding-bottom: 2.5%;
   padding-top: 2.5%;
   background-color: #0d0d0d;
+  color:white;
 }
 #socialMedia .fa {
   padding: 20px;
