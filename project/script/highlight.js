@@ -1,13 +1,21 @@
 function hideSection(section){
-    document.getElementById(section+"Content").style.ma ="0";
-    document.getElementById(section+"Show").style.display="inline"
+    document.getElementById(section+"Content").style.overflowY="hidden";
+    document.getElementById(section+"Content").style.maxHeight="0%";
+    document.getElementById(section+"Content").style.transitionProperty="All";
+    document.getElementById(section+"Content").style.transitionDuration=".5s";
+    document.getElementById(section+"Content").style.transitionTimingFunction="cubic-bezier(0, 1, 0.5, 1)";
     document.getElementById(section+"Hide").style.display="none"
+    document.getElementById(section+"Show").style.display="inline"
     document.getElementById(section+"Show").style.textAlign="center";
 }
 function showSection(section){
-    document.getElementById(section+"Content").style.display="inline";
-    document.getElementById(section+"Hide").style.display="inline"
+   
+    document.getElementById(section+"Content").style.maxHeight="100%";
+    document.getElementById(section+"Content").style.transitionProperty="All";
+    document.getElementById(section+"Content").style.transitionDuration=".5s";
+    document.getElementById(section+"Content").style.transitionTimingFunction="cubic-bezier(0, 1, 0.5, 1)";
     document.getElementById(section+"Show").style.display="none"
+    document.getElementById(section+"Hide").style.display="inline"
     document.getElementById(section+"Hide").style.textAlign="center";
 }
 
